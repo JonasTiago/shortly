@@ -7,8 +7,7 @@ const GlobalStyle = createGlobalStyle`
 }
 
 body{
-	font-family: 'Raleway', sans-serif;
-
+	font-family: 'Lexend Deca', sans-serif;
 }
 
 a{

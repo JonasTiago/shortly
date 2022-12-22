@@ -11,10 +11,12 @@ export default function Logo() {
 }
 
 const LogoStyle = styled.div`
+
     margin:auto;
     display:flex;
     align-items:center;
     h1{
       font-size:4em;
+      text-align:center;
     }
 `
