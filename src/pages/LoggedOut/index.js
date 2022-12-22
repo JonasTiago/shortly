@@ -1,6 +1,7 @@
 import NavBar from "../../components/Nav";
 import Logo from "../../components/Logo";
 import HomeStyel from "../../assets/styles/page";
+import Ranking from "../../components/Ranking";
 
 export default function LoggedOut() {
   return (
@@ -12,8 +13,8 @@ export default function LoggedOut() {
       <HomeStyel>
         <section>
           <Logo />
-          <div>rankig</div>
-          <a href="">Crie sua conta para usar nosso serviço!</a>
+          <Ranking />
+          <p>Crie sua conta para usar nosso serviço!</p>
         </section>
       </HomeStyel>
     </>

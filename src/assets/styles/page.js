@@ -15,7 +15,7 @@ const PageStyel = styled.div`
     align-items:center;
     justify-content: space-evenly;
 
-    >a{
+    >p{
         font-size:2.25em;
     }
   }

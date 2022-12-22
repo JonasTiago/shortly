@@ -1,5 +1,5 @@
 import PageStyel from "../../assets/styles/page";
-import Form from "../../components/form";
+import Form from "../../components/Form";
 import Logo from "../../components/Logo";
 import NavBar from "../../components/Nav";
 
