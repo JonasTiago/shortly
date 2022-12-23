@@ -2,13 +2,14 @@ import NavBar from "../../components/Nav";
 import Logo from "../../components/Logo";
 import HomeStyel from "../../assets/styles/page";
 import Ranking from "../../components/Ranking";
+import { Link } from "react-router-dom";
 
 export default function LoggedOut() {
   return (
     <>
       <NavBar>
-        <a href="">Entrar</a>
-        <a href="">Cadastrar-se</a>
+        <Link to={"/signin"}>Entrar</Link>
+        <Link to={"/signup"}>Cadastrar-se</Link>
       </NavBar>
       <HomeStyel>
         <section>

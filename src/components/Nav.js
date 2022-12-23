@@ -20,5 +20,11 @@ const NavStyle = styled.div`
   a {
     margin-left: 27px;
     color: #9c9c9c;
+
+    &:hover{
+      color:#5D9040;
+      cursor: pointer;
+    }
   }
+  
 `;

@@ -17,9 +17,13 @@ export default function UrlShort() {
 }
 
 const ShortStyle = styled.div`
+font-family: "Lexend Deca", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
   display: flex;
   width: 1020px;
   height: 62px;
+  margin-bottom:40px;
 
   > div {
     width: 887px;
@@ -37,7 +41,6 @@ const ShortStyle = styled.div`
     p {
       color: #fff;
       font-weight:400;
-      font-size:14px;
     }
   }
 
