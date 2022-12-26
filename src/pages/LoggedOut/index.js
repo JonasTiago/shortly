@@ -14,7 +14,6 @@ export default function LoggedOut() {
     axios
       .get(`${URL_BASE}/ranking`)
       .then((res) => {
-        console.log(res.data);
         setRanking(res.data);
       })
       .catch((res) => console.log(res));

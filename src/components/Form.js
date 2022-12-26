@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-export default function Form({ children }) {
-  return <FormStyle>{children}</FormStyle>;
+export default function Form({ children, toSend }) {
+  return <FormStyle onSubmit={toSend}>{children}</FormStyle>;
 }
 
 const FormStyle = styled.form`
@@ -12,7 +12,7 @@ const FormStyle = styled.form`
   flex-direction: column;
   align-items: center;
 
-  input[type="text"] {
+  input {
     width: 769px;
     height: 60px;
     border: 1px solid rgba(120, 177, 89, 0.25);

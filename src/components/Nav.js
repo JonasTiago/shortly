@@ -14,7 +14,7 @@ const NavStyle = styled.div`
   justify-content: flex-end;
   margin: 70px auto;
   span {
-    margin-right: 600px;
+    margin-right: 38rem;
     color: #5d9040;
   }
   a {

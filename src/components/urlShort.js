@@ -1,13 +1,14 @@
 import styled from "styled-components";
 import Trash from "./../assets/img/tr.svg";
 
-export default function UrlShort() {
+export default function UrlShort({ urlShorts }) {
+
   return (
-    <ShortStyle>
+    <ShortStyle key={urlShorts.id}>
       <div>
-        <p>https://www.driven.com.br</p>
-        <p>e4231A</p>
-        <p>Quantidade de visitantes: 271</p>
+        <p>{urlShorts.url}</p>
+        <p>{urlShorts.shortUrl}</p>
+        <p>Quantidade de visitantes: {urlShorts.visitCount}</p>
       </div>
       <button>
         <img src={Trash} alt="deletar" />
@@ -17,13 +18,13 @@ export default function UrlShort() {
 }
 
 const ShortStyle = styled.div`
-font-family: "Lexend Deca", sans-serif;
+  font-family: "Lexend Deca", sans-serif;
   font-size: 14px;
   font-weight: 400;
   display: flex;
   width: 1020px;
   height: 62px;
-  margin-bottom:40px;
+  margin-bottom: 40px;
 
   > div {
     width: 887px;
@@ -40,7 +41,7 @@ font-family: "Lexend Deca", sans-serif;
 
     p {
       color: #fff;
-      font-weight:400;
+      font-weight: 400;
     }
   }
 
@@ -50,6 +51,6 @@ font-family: "Lexend Deca", sans-serif;
     background: #ffffff;
     box-shadow: 0px 4px 24px rgba(120, 177, 89, 0.12);
     border-radius: 0px 12px 12px 0px;
-    border:none;
+    border: none;
   }
 `;

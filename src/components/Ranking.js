@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export default function Ranking({ ranking }) {
-  console.log(ranking);
+  
   return (
     <RankingStyele>
       <h2> &#127942; Ranking</h2>
       <div>
         {ranking?.map((user, indx) => (
-          <p>
+          <p key={user.id}>
             {indx+1}. {user.name} - {user.linksCount} links - {user.visitCount} visualizações
           </p>
         ))}
