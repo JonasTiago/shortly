@@ -1,7 +1,23 @@
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { AuthContext } from "../contexts/authContext";
 
 export default function NavBar({ children }) {
-  return <NavStyle>{children}</NavStyle>;
+  const { token } = useContext(AuthContext);
+  const navigate = useNavigate()
+
+  function handleLogout() {
+    localStorage.clear();
+    navigate("/")
+  }
+
+  return (
+    <NavStyle>
+      {children}
+      {token && <a onClick={handleLogout}>Sair</a>}
+    </NavStyle>
+  );
 }
 
 const NavStyle = styled.div`
@@ -21,10 +37,9 @@ const NavStyle = styled.div`
     margin-left: 27px;
     color: #9c9c9c;
 
-    &:hover{
-      color:#5D9040;
+    &:hover {
+      color: #5d9040;
       cursor: pointer;
     }
   }
-  
 `;

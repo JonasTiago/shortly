@@ -9,7 +9,7 @@ import URL_BASE from "../../constants/URL_BASE";
 import { AuthContext } from "../../contexts/authContext";
 
 export default function SignIn() {
-  const { token, setToken } = useContext(AuthContext);
+  const { setToken } = useContext(AuthContext);
   const navigate = useNavigate();
   const [form, setForm] = useState({
     email: "",
@@ -32,6 +32,7 @@ export default function SignIn() {
       .post(`${URL_BASE}/signin`, body)
       .then((res) => {
         setToken(res.data.token);
+        localStorage.setItem('token', res.data.token);
         navigate("/logged");
       })
       .catch((res) => {
