@@ -1,7 +1,26 @@
+import { useContext } from "react";
 import styled from "styled-components";
 import Trash from "./../assets/img/tr.svg";
+import axios from "axios";
+import { AuthContext } from "../contexts/authContext";
+import URL_BASE from "../constants/URL_BASE";
 
-export default function UrlShort({ urlShorts }) {
+export default function UrlShort({ urlShorts, setUpShort }) {
+  const { token } = useContext(AuthContext);
+
+  function deleteUrl(id) {
+    const headers = { authorization: `Bearer ${token}` };
+
+    axios
+      .delete(`${URL_BASE}/urls/${id}`, { headers })
+      .then((res) => {
+        console.log(res.status);
+        setUpShort(res.status);
+      })
+      .catch((res) => {
+        console.log(res);
+      });
+  }
 
   return (
     <ShortStyle key={urlShorts.id}>
@@ -10,7 +29,7 @@ export default function UrlShort({ urlShorts }) {
         <p>{urlShorts.shortUrl}</p>
         <p>Quantidade de visitantes: {urlShorts.visitCount}</p>
       </div>
-      <button>
+      <button onClick={() => deleteUrl(urlShorts.id)}>
         <img src={Trash} alt="deletar" />
       </button>
     </ShortStyle>
@@ -52,5 +71,10 @@ const ShortStyle = styled.div`
     box-shadow: 0px 4px 24px rgba(120, 177, 89, 0.12);
     border-radius: 0px 12px 12px 0px;
     border: none;
+    cursor: pointer;
+
+    &:hover {
+      color: #fefefe;
+    }
   }
 `;
